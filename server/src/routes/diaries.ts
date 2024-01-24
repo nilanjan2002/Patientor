@@ -7,8 +7,10 @@ router.get('/', (_req, res) => {
   res.send(diaryService.getNonSensitiveEntries());
 });
 
-router.post('/', (_req, res) => {
-  res.send('Saving a diary!');
+router.post('/', ( req, res) => {
+  const newDiary = toNewDiaryEntry(req.body);
+  const addedEntry = diaryService.addDiary(newDiary);
+  res.json(addedEntry);
 });
 
 export default router;
