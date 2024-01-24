@@ -1,4 +1,6 @@
-const data = [
+import { DiagEntry } from "../src/types";
+
+const data:DiagEntry[] = [
     {
       "code": "M24.2",
       "name": "Disorder of ligament",
