@@ -16,9 +16,10 @@ router.get('/:id', (req,res)=>{
         res.status(404);
     }
 })
-
+/*
 router.post('/', (req,res)=>{
     
 })
+*/
 
 export default router;

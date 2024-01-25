@@ -1,5 +1,5 @@
 import diaryData from "../../data/entries";
-import {DiaryEntry, NewDiaryEntry, NonSensitiveDiaryEntry, Visibility, Weather} from "../types"
+import {DiaryEntry, NewDiaryEntry, NonSensitiveDiaryEntry} from "../types"
 
 
 const diaries: DiaryEntry[] = diaryData as DiaryEntry[];
@@ -7,7 +7,7 @@ const diaries: DiaryEntry[] = diaryData as DiaryEntry[];
 const getEntries = ():DiaryEntry[] =>{
     return diaries;
 }
-const getNonSensitiveEntries = ():NonSensitiveDiaryEntry =>{
+const getNonSensitiveEntries = ():NonSensitiveDiaryEntry[] =>{
   return diaryData.map(({id, weather, date, visibility})=>(
      {
         id,
@@ -18,7 +18,7 @@ const getNonSensitiveEntries = ():NonSensitiveDiaryEntry =>{
   ))
 }
 
-const addDiary = (newEntry):NewDiaryEntry =>{
+const addDiary = (newEntry:NewDiaryEntry ):NewDiaryEntry =>{
   const newDiary = {
     id: Math.max(...diaries.map( d => d.id ))+1,
   ...newEntry
